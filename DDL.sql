@@ -253,7 +253,7 @@ CREATE TABLE `worksfororganization` (
 --
 DROP TABLE IF EXISTS `view1`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view1`  AS SELECT `p`.`ID` AS `ereuniths_ID`, `p`.`FirstName` AS `first_name`, `p`.`LastName` AS `last_name`, `pm`.`ID` AS `ergo_id`, `pm`.`Title` AS `title`, `pm`.`Synopsis` AS `Synopsis` FROM ((`worksforergo` `w` join `ereuniths` `p` on(`w`.`ereuniths` = `p`.`ID`)) join `ergo` `pm` on(`w`.`ergo` = `pm`.`ID`)) ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `view1`  AS SELECT `p`.`ID` AS `ereuniths_ID`, `p`.`FirstName` AS `first_name`, `p`.`LastName` AS `last_name`, `pm`.`ID` AS `ergo_id`, `pm`.`Title` AS `title`, `pm`.`Synopsis` AS `Synopsis` FROM ((`worksforergo` `w` join `ereuniths` `p` on(`w`.`ereuniths` = `p`.`ID`)) join `ergo` `pm` on(`w`.`ergo` = `pm`.`ID`)) ;
 
 -- --------------------------------------------------------
 
@@ -262,7 +262,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `view2`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view2`  AS SELECT `p`.`ID` AS `ereuniths_ID`, `p`.`FirstName` AS `first_name`, `p`.`LastName` AS `last_name`, `pm`.`ID` AS `oraganization_id`, `pm`.`TagName` AS `tagname`, `w`.`SINCE` AS `date` FROM ((`worksfororganization` `w` join `ereuniths` `p` on(`w`.`ereuniths` = `p`.`ID`)) join `organization` `pm` on(`w`.`organization` = `pm`.`ID`)) ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `view2`  AS SELECT `p`.`ID` AS `ereuniths_ID`, `p`.`FirstName` AS `first_name`, `p`.`LastName` AS `last_name`, `pm`.`ID` AS `oraganization_id`, `pm`.`TagName` AS `tagname`, `w`.`SINCE` AS `date` FROM ((`worksfororganization` `w` join `ereuniths` `p` on(`w`.`ereuniths` = `p`.`ID`)) join `organization` `pm` on(`w`.`organization` = `pm`.`ID`)) ;
 
 --
 -- Indexes for dumped tables
